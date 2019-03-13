@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,6 +16,30 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
-
-<router-outlet></router-outlet>
+</ul> -->
+<div>
+  <input [(ngModel)]="name" placeholder="Name">
+  <input [(ngModel)]="empid" placeholder="EmployeeId">
+  <input [(ngModel)]="type" placeholder="Type">
+  <button (click)= "onclick()" >test</button>
+    <div>
+      <table class ='table'>
+        <tr>
+            <th class ='table'>Name</th>
+            <th class ='table'>EmployeeId</th>
+            <th class ='table'>Type</th>
+            <th class ='table'>Actions</th>
+        </tr>
+        <tr *ngFor = "let ar of array; index as i;">
+          <td class ='table'>{{ar.name}}</td>        
+          <td class ='table'>{{ar.empid}}</td>
+          <td class ='table'>{{ar.type}}</td>
+          <button (click) = "Edit(ar,i)">Edit</button>
+          <button (click) = "Delete(i)">Delete</button>
+        </tr>
+      </table>
+      
+    </div>
+  <router-outlet></router-outlet>
+  
+</div>
